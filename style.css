@@ -1,0 +1,28 @@
+<thead>
+<tr>
+  <th style="width: 34%">City</th>
+    <th>Temp</th>
+    <th>Feels like</th>
+    <th>Humidity</th>
+    <th>Min_temp</th>
+    <th>Max_temp</th>
+    <th>Wind_speed</th>
+    <th>Wind_degrees</th>
+    <th>Sunrise</th>
+    <th>Sunset</th>
+</tr>
+<tbody>
+  <tr scope="row" >
+    <th style="width:34%" >Goa</th>
+    <td style="width: 22%;"><span id="temp1"></span></td>
+    <td style="width: 22%;"><span id="feels_like1"></span></td>
+    <td style="width: 22%;"><span id="humidity1"></span></td>
+    <td style="width: 22%;"><span id="min_temp1"></span></td>
+    <td style="width: 22%;"><span id="max_temp1"></span></td>
+    <td style="width: 22%;"><span id="wind_speed1"></span></td>
+    <td style="width: 22%;"><span id="wind_degrees1"></span></td>
+    <td style="width: 22%;"><span id="sunrise1"></span></td>
+    <td style="width: 22%;"><span id="sunset1"></span></td>
+  </tr>
+</tbody> 
+</thead>

@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Weather app</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand text-secondary " href="#"><b>Weather app</b></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About us</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  City
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#" id="Delhi" onclick="onNavItemClick('Delhi')">Delhi</a></li>
+                  <li><a class="dropdown-item" href="#" id="Dehradun" onclick="onNavItemClick('Dehradun')">Dehradun</a></li>
+                  <li><a class="dropdown-item" href="#" id="Mumbai" onclick="onNavItemClick('Mumbai')">Mumbai</a></li>
+                  <li><a class="dropdown-item" href="#" id="Roorkee" onclick="onNavItemClick('Roorkee')">Roorkee</a></li>
+                  <!-- <li><hr class="dropdown-divider"></li> -->
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" >Usage Guide</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2 city" id="city" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success city" type="submit" id="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+
+      <div class="container">
+        <h1 class="my-4 text-center">Weather for <span id="cityname"></span></h1>
+        <main>
+          <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+            <div class="col">
+              <div class="card mb-4 rounded-3 shadow-sm">
+                <div class="card-header py-4">
+                  <h4 class="my-0 fw-normal">Temprature</h4>
+                </div>
+                <div class="card-body">
+                  <h1 class="card-title pricing-card-title"><span id="temp"></span>℃</h1>
+                  <ul class="list-unstyled mt-3 mb-4">
+                    <li>Max temprature is <span id="max_temp"></span></li>
+                    <li>Minimum temprature is <span id="min_temp"></span></li>
+                  </ul>
+                  <!-- <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button> -->
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card mb-4 rounded-3 shadow-sm">
+                <div class="card-header py-3">
+                  <h4 class="my-0 fw-normal">Humidity Info</h4>
+                </div>
+                <div class="card-body">
+                  <h1 class="card-title pricing-card-title"><span id="humidity"></span><small class="text-body-secondary fw-light"> g/m³</small></h1>
+                  <ul class="list-unstyled mt-3 mb-4">
+                    <!-- <li>Cloud pct is <span id="cloud_pct"></span></li> -->
+                    <li>wind degree <span id="wind_degrees"></span></li>
+                    <li>Fells like <span id="feels_like"></span></li>
+                  </ul>
+                  <!-- <button type="button" class="w-100 btn btn-lg btn-primary">Get started</button> -->
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card mb-4 rounded-3 shadow-s ">
+                <div class="card-header py-3 ">
+                  <h4 class="my-0 fw-normal">Wind Info</h4>
+                </div>
+                <div class="card-body">
+                  <h1 class="card-title pricing-card-title"><span id="wind_speed"></span><small class="text-body-secondary fw-light">m/sec</small></h1>
+                  <ul class="list-unstyled mt-3 mb-4">
+                    <li>sunset at <span id="sunset"></span></li>
+                    <li>sunrise at <span id="sunrise"></span></li>
+                    <li>wind speed </span id="wind_speed"></li>
+                  </ul>
+                  <!-- <button type="button" class="w-100 btn btn-lg btn-primary">Contact us</button> -->
+                </div>
+              </div>
+            </div>
+          </div>
+      
+          <h2 class="display-6 text-center mb-4"><b>Weather of Comman Places</b></h2>
+      
+          <div class="table-responsive">
+            <table class="table text-center">
+              <thead>
+                <tr>
+                  <th style="width: 34%">City</th>
+                    <th>Temp</th>
+                    <th>Feels like</th>
+                    <th>Humidity</th>
+                    <th>Min_temp</th>
+                    <th>Max_temp</th>
+                    <th>Wind_speed</th>
+                    <th>Wind_degrees</th>
+                    <th>Sunrise</th>
+                    <th>Sunset</th>
+                </tr>
+                <tbody>
+                  <tr scope="row" >
+                    <th style="width:34%"id="Goa" >Goa</th>
+                    <td style="width: 22%;"><span id="temp1"></span> ℃</td>
+                    <td style="width: 22%;"><span id="feels_like1">°</span></td>
+                    <td style="width: 22%;"><span id="humidity1"></span></td>
+                    <td style="width: 22%;"><span id="min_temp1"></span></td>
+                    <td style="width: 22%;"><span id="max_temp1"></span></td>
+                    <td style="width: 22%;"><span id="wind_speed1"></span> m/sec</td>
+                    <td style="width: 22%;"><span id="wind_degrees1"></span></td>
+                    <td style="width: 22%;"><span id="sunrise1"></span></td>
+                    <td style="width: 22%;"><span id="sunset1"></span></td>
+                  </tr>
+                </tbody> 
+                </thead>
+            </table>
+          </div>
+        </main>
+      </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="scripts.js"></script>
+  </body>
+</html>
